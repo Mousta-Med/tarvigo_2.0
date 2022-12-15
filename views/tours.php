@@ -1,3 +1,10 @@
+<?php
+include "../models/tour.class.php";
+$tours = new tour();
+$sql = $tours->showtours();
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -89,25 +96,30 @@
     </div>
 
     <div class="package-contentv1">
-      <div class="box">
-        <div class="thum">
-          <img src="../public/img/paris.png" alt="paris image" />
-        </div>
+      <?php
+      while ($tours = mysqli_fetch_assoc($sql)) {
+      ?>
+        <div class="box">
+          <div class="thum">
+            <img src="../public/img/<?= $tours['tour_image'] ?>" alt="paris image" />
+          </div>
 
-        <div class="dest-content">
-          <div class="location">
-            <h4>paris</h4>
-            <p>4h - 5h</p>
-          </div>
-          <div class="stars">
-            <a href="#"><i class="bx bxs-star"></i></a>
-            <a href="#"><i class="bx bxs-star"></i></a>
-            <a href="#"><i class="bx bxs-star"></i></a>
-            <a href="#"><i class="bx bxs-star"></i></a>
-            <a href="#"><i class="bx bxs-star"></i></a>
+          <div class="dest-content">
+            <div class="location">
+              <h4><?= $tours['tour_place'] ?></h4>
+              <p><?= $tours['tour_description'] ?></p>
+            </div>
+            <div class="stars">
+              <a href="#"><i class="bx bxs-star"></i></a>
+              <a href="#"><i class="bx bxs-star"></i></a>
+              <a href="#"><i class="bx bxs-star"></i></a>
+              <a href="#"><i class="bx bxs-star"></i></a>
+              <a href="#"><i class="bx bxs-star"></i></a>
+            </div>
           </div>
         </div>
-      </div>
+      <?php } ?>
+    </div>
 
   </section>
 

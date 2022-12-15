@@ -75,7 +75,10 @@ header {
 }
 
 section {
-  padding: 80px 18%;
+  padding-left: 250px;
+  padding-right: 250px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 .home {
   position: relative;
@@ -499,7 +502,6 @@ label {
   grid-gap: 2rem;
   align-items: center;
   margin-top: 5rem;
-  margin-bottom: -23%;
 }
 
 #contact {
@@ -584,8 +586,10 @@ label {
     transition: 0.2s;
   }
   section {
-    padding: 80px 3%;
-    transition: 0.2s;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
   :root {
     --big-font: 4.5rem;

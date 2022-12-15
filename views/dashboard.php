@@ -2,7 +2,6 @@
 session_start();
 
 include "../models/tour.class.php";
-include "../models/admin.class.php";
 $tours = new tour();
 $sql = $tours->showtours();
 
